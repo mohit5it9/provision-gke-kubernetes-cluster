@@ -21,11 +21,11 @@ jobs:
       - IN: app_gitRepo
         switch: off
       - IN: gke_cliConfig
-      - IN: provision_gke_cluster_job
         scopes:
           - gke
+      - IN: provision_gke_cluster_job
       - TASK:
         # invoke a script that deprovisions the GKE cluster named test-cluster
         # $GKE_CLICONFIG_POINTER_REGION is an environment variable that is automatically created and injected
         # by the gke_cliConfig resource and points to the availability zone.
-        - script: . $APP_GITREPO_PATH/gitRepo/deprovision_gke_cluster.sh test-cluster $GKE_CLICONFIG_POINTER_REGION
+        - script: . $APP_GITREPO_PATH/gitRepo/deprovision_gke_cluster.sh test-cluster1 $GKE_CLICONFIG_POINTER_REGION
