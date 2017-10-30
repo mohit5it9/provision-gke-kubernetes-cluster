@@ -24,6 +24,8 @@ jobs:
         switch: off
       - IN: gke_cliConfig
       - IN: provision_gke_cluster_job
+        scopes:
+          - gke
       - TASK:
         # invoke a script that deprovisions the GKE cluster named test-cluster
         # $GKE_CLICONFIG_POINTER_REGION is an environment variable that is automatically created and injected
