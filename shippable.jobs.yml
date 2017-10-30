@@ -7,9 +7,9 @@ jobs:
     steps:
       - IN: app_gitRepo
       - IN: gke_cliConfig
-      - IN: app_trigger
         scopes:
-          - gcr
+          - gke
+      - IN: app_trigger
       - TASK:
         # invoke a script that provisions the GKE cluster named test-cluster
         - script: . $APP_GITREPO_PATH/gitRepo/provision_gke_cluster.sh test-cluster $GKE_CLICONFIG_POINTER_REGION
