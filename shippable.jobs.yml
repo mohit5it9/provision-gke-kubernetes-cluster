@@ -6,13 +6,14 @@ jobs:
     type: runSh
     steps:
       - IN: app_gitRepo
+        switch: off
       - IN: gke_cliConfig
         scopes:
           - gke
       - IN: app_trigger
       - TASK:
         # invoke a script that provisions the GKE cluster named test-cluster
-        - script: . $APP_GITREPO_PATH/gitRepo/provision_gke_cluster.sh test-cluster1 $GKE_CLICONFIG_POINTER_REGION
+        - script: . $APP_GITREPO_PATH/gitRepo/provision_gke_cluster.sh test-cluster1
 
   # Job that deprovisions the GKE cluster
   - name: deprovision_gke_cluster_job
