@@ -4,16 +4,16 @@ resources:
   # GitHub repo holding scripts to be used in runsh pipeline job
   - name: app_gitRepo
     type: gitRepo
-    integration: dr_github # replace with your GitHub integration name
+    integration: github # replace with your GitHub integration name
     pointer:
       # replace with source code location (e.g. GitHub) where you cloned this
       # sample project.
-      sourceName: devops-recipes/provision-gke-kubernetes-cluster
-      branch: master
+      sourceName: mohit5it9/provision-gke-kubernetes-cluster
+      branch: test
 
   # config for GKE CLI
   - name: gke_cliConfig
     type: cliConfig
-    integration: drship_gke    # replace with your Google Cloud integration name
+    integration: gcloud    # replace with your Google Cloud integration name
     pointer:
       region: us-central1-b
